@@ -15,6 +15,7 @@ Este projeto tem como objetivo a criação de uma aplicação web simples que co
 - Uso de localStorage: O último estado de pesquisa é salvo e restaurado utilizando localStorage.
 
 ## GitPages Link
+https://isadorameneghetti.github.io/L5-Networks-project/
 
 ## Estrutura de Arquivos
 - index.html: Arquivo principal da aplicação com a estrutura HTML.
