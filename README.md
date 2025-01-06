@@ -1,4 +1,5 @@
 ## 💻 L5 Network 💻
+![Banner](imgs/aesthetirc%20sta.jpeg)
 
 # Teste Técnico - L5 Networks
 
