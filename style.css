@@ -1,0 +1,486 @@
+
+/* Importação da fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Variáveis de cores e gradientes */
+:root {
+    --cor-principal: rgb(38, 42, 65);
+    --cor-de-fundo: rgb(255, 255, 255);
+    --cor-do-texto: rgb(172, 169, 169);
+    --cor-do-texto-filtro: rgba(255, 255, 255, 0.6);
+    --cor-secundária: rgb(109, 80, 158);
+    --cor-terciária: rgb(175, 57, 115);
+    --transparência: rgba(255, 255, 255, 0.2);
+    --l5-network: linear-gradient(90deg, var(--cor-secundária), var(--cor-terciária));
+}
+
+/* Configuração padrão para todos os elementos */
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    background-color: var(--cor-de-fundo);
+}
+
+/* Estilo do cabeçalho */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: var(--l5-network);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.título {
+    font-size: 42px;
+    color: var(--cor-de-fundo);
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+/* Estilo do scrollbar */
+::-webkit-scrollbar {
+    width: 12px; 
+    background-color: var(--cor-principal); 
+}
+
+/* Estilo da parte principal da página */
+main {
+    width: 90%;
+    max-width: 1400px;
+    margin: 120px auto 0;
+    text-align: center;
+}
+
+.filtros {
+    margin-bottom: 10px;
+}
+
+/* Estilo dos campos de entrada */
+#campoNome, #seletorCidades {
+    padding: 10px;
+    font-size: 1rem;
+    margin: 5px;
+    width: 400px;
+    background: var(--cor-principal);
+    color: var(--cor-do-texto);
+    border-radius: 4px;
+    border: none;
+}
+
+#campoNome:focus, #seletorCidades:focus {
+    outline: none; /* Remove o contorno padrão ao focar */
+}
+
+#campoNome::placeholder {
+    color: var(--cor-do-texto);
+}
+
+/* Estilo do botão de busca */
+#botaoBuscar {
+    font-size: 1.2rem;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    color: var(--cor-de-fundo);
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+    background: var(--l5-network);
+    text-transform: uppercase;
+}
+
+/* Estilo da lista de usuários */
+.lista-de-usuarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px 190px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Estilo do cartão de usuário */
+.user-card {
+    position: relative;
+    background-color: var(--cor-principal);
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: left;
+}
+
+.user-card h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--cor-do-texto);
+    margin-bottom: 5px;
+}
+
+/* Estilo da tela de carregamento */
+#telaDeCarregamento {
+    font-size: 1.2rem;
+    width: 250px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+    display: block;
+    margin: 0 auto;
+    background: var(--l5-network);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Estilo para quando não há resultados */
+.sem-resultados
+{
+    display: none;
+    font-size: 1.2rem;
+    color: var(--cor-principal);
+}
+
+/* Estilo do email e cidade */
+.email {
+    margin-bottom: 5px;
+    color: var(--cor-do-texto);
+    text-decoration: none;
+}
+
+.cidade {
+    color: var(--cor-do-texto);
+}
+
+
+/* Estilo das funcionalidades extras */
+.funcionalidadesExtras {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px auto;
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Estilo da área de última pesquisa */
+#ultimaPesquisa {
+    width: 300px;
+    height: 150px;
+    border: none;
+    border-radius: 5px;
+    color: var(--cor-de-fundo);
+    cursor: pointer;
+    text-align: center;
+    background: var(--l5-network);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#ultimaPesquisa h2 {
+    text-transform: uppercase;
+    font-size: 25px;
+    margin: 0;
+}
+
+/* Estilo do botão para adicionar usuário */
+#botaoAdicionarUsuario {
+    font-size: 1.2rem;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    color: var(--cor-de-fundo);
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+    background: var(--l5-network);
+    text-transform: uppercase;
+}
+
+/* Estilo da área de adicionar usuário */
+#areaAdicionarUsuario {
+    border-radius: 5px;
+    width: 750px;
+    height: 250px;
+    position: relative;
+    padding: 20px;
+    background: var(--l5-network);
+    display: none;
+}
+
+#areaAdicionarUsuario input {
+    display: block;
+    margin: 10px;
+    padding: 8px;
+    width: 100%;
+    max-width: 650px;
+    background: var(--cor-principal);
+    color: var(--cor-do-texto);
+    border-radius: 4px;
+    border: none;
+}
+
+#areaAdicionarUsuario button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* Estilo da lista de usuários */
+#listaUsuarios {
+    margin-top: 30px;
+}
+
+/* Estilo da caixa de confirmação */
+#caixaConfirmacao {
+    position: fixed;
+    color: var(--cor-de-fundo);
+    top: 50%;
+    width: 700px;
+    height: auto;
+    line-height: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--l5-network);
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#caixaConfirmacao p {
+    font-size: 20px;
+}
+
+#caixaConfirmacao button {
+    font-size: 1rem;
+    padding: 5px 20px;
+    margin: 8px 15px;
+    border: 2px solid var(--cor-de-fundo);
+    border-radius: 5px;
+    background: transparent;
+    color: var(--cor-de-fundo);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: ease 0.5s;
+}
+
+#caixaConfirmacao button:hover {
+    background: var(--cor-de-fundo);
+    color: var(--cor-principal);
+    font-weight: 400;
+}
+
+/* Estilo para elementos ocultos */
+.oculto {
+    display: none;
+}
+
+/* Estilo do ícone de excluir */
+.iconeExcluir {
+    background-color: transparent;
+    width: 45px;
+    border: none;
+    cursor: pointer;
+    color: var(--cor-do-texto);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+/* Estilo do botão de salvar */
+#botaoSalvar {
+    font-size: 1rem;
+    cursor: pointer;
+    background: transparent;
+    color: var(--cor-de-fundo);
+    text-transform: uppercase;
+    border: 2px solid var(--cor-de-fundo);
+    border-radius: 5px;
+    display: block;
+    transition: background 0.3s ease;
+    text-align: center;
+    margin: 20px 300px; 
+}
+
+#botaoSalvar:hover {
+    background: var(--cor-de-fundo);
+    color: var(--cor-principal);
+    font-weight: 400;
+}
+
+/* Estilo do botão de cancelar */
+#botaoCancelar {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--cor-do-texto);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+    position: absolute;
+    top: 10px;
+    right: 1px;
+}
+
+#botaoCancelar:hover, .iconeExcluir:hover {
+    color: var(--cor-de-fundo); 
+}
+
+/* Estilo do placeholder na área de adicionar usuário */
+#areaAdicionarUsuario input::placeholder {
+    color: var(--cor-do-texto-filtro); 
+}
+
+/* Estilo do rodapé */
+footer {
+    background: var(--l5-network);
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    color: var(--cor-de-fundo);
+    padding: 30px 0;
+    font-size: 15px;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* Estilo para telas pequenas (largura máxima de 600px) */
+@media (max-width: 600px) {
+    /* Ajusta o tamanho da fonte do título */
+    .título {
+        font-size: 28px;
+    }
+
+    /* Define a largura e o espaçamento do elemento principal */
+    main {
+        width: 95%;
+        margin: 100px auto 0;
+    }
+
+    /* Ajusta a largura e o tamanho da fonte dos campos de entrada */
+    #campoNome, #seletorCidades {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    /* Ajusta o botão de busca para ocupar toda a largura disponível */
+    #botaoBuscar {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    /* Configura a lista de usuários para exibir os elementos em uma única coluna */
+    .lista-de-usuarios {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    /* Ajusta o tamanho dos cartões de usuário */
+    .user-card {
+        width: 90%;
+    }
+
+    /* Redefine a direção do layout flexível e o espaçamento das funcionalidades extras */
+    .funcionalidadesExtras {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 20px;
+    }
+
+    /* Ajusta o tamanho e o espaçamento do último campo de pesquisa */
+    #ultimaPesquisa {
+        width: 100%; 
+        height: auto; 
+        padding: 15px; 
+    }
+
+    /* Ajusta o botão de adicionar usuário */
+    #botaoAdicionarUsuario {
+        width: 100%;
+        font-size: 1rem;
+        margin-top: 20px; 
+    }
+
+    /* Ajusta o layout da área de adicionar usuário */
+    #areaAdicionarUsuario {
+        width: 90%;
+        height: auto;
+        padding: 15px;
+    }
+
+    /* Configura o rodapé para ser exibido em formato de coluna e centralizado */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 0;
+    }
+}
+
+/* Estilo para telas médias (tablets, largura máxima de 900px) */
+@media (max-width: 900px) {
+    /* Ajusta o espaçamento do cabeçalho */
+    header {
+        padding: 15px 50px;
+    }
+
+    /* Ajusta o tamanho da fonte do título */
+    .título {
+        font-size: 32px;
+    }
+
+    /* Define a largura e o espaçamento do elemento principal */
+    main {
+        width: 90%;
+        margin: 100px auto 0;
+    }
+
+    /* Configura a lista de usuários para exibir múltiplas colunas responsivas */
+    .lista-de-usuarios {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 15px;
+    }
+
+    /* Ajusta o tamanho dos cartões de usuário */
+    .user-card {
+        width: 100%;
+    }
+
+    /* Ajusta o tamanho e o espaçamento do último campo de pesquisa */
+    #ultimaPesquisa {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    /* Ajusta o espaçamento do rodapé */
+    footer {
+        padding: 20px 0;
+    }
+}

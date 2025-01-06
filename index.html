@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários</title>
+    
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link para o Font Awesome (ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a class="título">Lista de Usuários</a>
+    </header>
+
+    <main>
+        <!-- Filtros de busca -->
+        <div class="filtros">
+            <input type="text" id="campoNome" placeholder="Buscar por nome..." />
+            <select id="seletorCidades">
+                <option value="">Todas as cidades</option>
+            </select>
+            <button id="botaoBuscar">Buscar</button>
+        </div>
+
+        <!-- Tela de carregamento -->
+        <div id="telaDeCarregamento" style="display: none;">Carregando...</div>
+
+        <!-- Lista de usuários -->
+        <div id="listaDeUsuarios" class="lista-de-usuarios"></div>
+        
+        <!-- Mensagem para quando não há resultados -->
+        <div id="semResultados" class="sem-resultados">Nenhum usuário encontrado.</div>
+
+        <!-- Funcionalidades extras -->
+        <div class="funcionalidadesExtras">
+            <div id="ultimaPesquisa">
+                <h2>Última pesquisa</h2>
+                <p id="ultimoNomePesquisa">Nome: </p>
+                <p id="ultimaCidadePesquisa">Cidade: </p>
+            </div>
+    
+            <button id="botaoAdicionarUsuario">Adicionar Usuário</button>
+    
+            <!-- Área para adicionar um novo usuário -->
+            <div id="areaAdicionarUsuario"> 
+                <button id="botaoCancelar" class="iconeExcluir">
+                    <i class="fas fa-times"></i>
+                </button>
+                <input type="text" id="campoNomeAdicionar" placeholder="Nome">
+                <input type="email" id="campoEmailAdicionar" placeholder="Email">
+                <input type="text" id="campoCidadeAdicionar" placeholder="Cidade">
+                <button id="botaoSalvar">Salvar</button>
+            </div>
+        </div>
+
+        <!-- Caixa de confirmação para exclusão -->
+        <div id="caixaConfirmacao" class="oculto">
+            <p>Você tem certeza que quer deletar esse usuário?</p>
+            <button id="confirmarExclusao">Sim</button>
+            <button id="cancelarExclusao">Não</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>©2024 Isadora de Morais Meneghetti para L5 Network || Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Link para o JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
